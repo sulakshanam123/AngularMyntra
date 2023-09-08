@@ -1,0 +1,47 @@
+{
+    "ethnic" : [
+        {
+            "category": "Indian traditional",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Festive",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Evergreen Sarees",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Fusion",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Dupattas ans Shawls",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Salwars and Anarkalis",
+            "sampleImageURL": ""
+        }
+    ],
+
+    "WesternWear": [
+        {
+            "category": "Jeans and Jeggins",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Tops and Tees",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Jackets and Shrugs",
+            "sampleImageURL": ""
+        },
+        {
+            "category": "Party Wear",
+            "sampleImageURL": ""
+        }
+    ]
+}

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { WomenRoutingModule } from './women-routing.module';
 
 
-
 @NgModule({
   declarations: [],
   imports: [

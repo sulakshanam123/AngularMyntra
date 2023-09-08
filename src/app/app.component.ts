@@ -1,62 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './common/login.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'demo';
-  searchValue: any;
+export class AppComponent implements OnInit {
+  isUserLoggedIn: boolean = false;
+  constructor(private _loginService: LoginService) {}
 
-  
-
-  myfun () {
-
-    const data = [
-      {
-        status: 'active',
-        age: 13
-      },
-      {
-        status: 'inactive',
-        age: 23
-      },
-      {
-        status: 'active',
-        age: 19
-      },
-      {
-        status: 'active',
-        age: 10
-      },
-      {
-        status: 'inactive',
-        age: 60
-      },
-      {
-        status: 'active',
-        age: 20
-      },
-      {
-        status: 'iactive',
-        age: 13
-      },
-      {
-        status: 'active',
-        age: 43
-      },
-    ]
-    const observable  = new Observable((subscriber) => {
-      subscriber.next(data);
-    })
-    const observer = {
-      next: (value: any) => { console.log(value) },
-      error: (err: any) => { console.log(err) },
-      complete: () => { console.log('complete') },
-    }
-
-    observable.subscribe(observer);
+  ngOnInit() {
+    window.localStorage.setItem('username', 'sulu');
+    window.localStorage.setItem('password', 'password');
+    this._loginService.isLoggedIn$
+    .subscribe(
+      status => {
+        this.isUserLoggedIn = status;
+        alert(status);
+      }
+    );
   }
+
 }

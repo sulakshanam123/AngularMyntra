@@ -1,6 +1,16 @@
-<div>
+<!-- <div>
   Main Page first actual commit
+   -->
   <!-- <a routerLink="login">Login</a> -->
- <button (click)="myfun()">Click</button>
-</div>
+ <!-- <button (click)="myfun()">Click</button> -->
+<!-- </div> -->
+
+<h1 appHighlight *appIfNot="true" [enterColor]="'blue'"  [leaveColor]="'green'">Test red</h1>
+
+<div> test {{200 | finalPrice: 20:10}}</div>
+
+<div>percent pipe {{ 0.000089100 | percent: '2.1-3' }}</div>
+<h1 appHighlight *appIfNot="true"  [enterColor]="'blue'"> don't show me</h1>
+<app-header [isUserLoggedIn]="isUserLoggedIn"></app-header>
+
 <router-outlet></router-outlet>

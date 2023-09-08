@@ -1,0 +1,14 @@
+<div class="navbar">
+    <a *ngIf="!isUserLoggedIn" routerLink="/login"><i class="fa fa-fw fa-user"></i> Login</a>
+    <a routerLink="/home"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a routerLink="/shop/men"><i class="fa fa-fw fa-home"></i>Men</a>
+    <a routerLink="/shop/women"><i class="fa fa-fw fa-home"></i>Women</a>
+    <a routerLink="/shop/kids"><i class="fa fa-fw fa-home"></i>Kids</a>
+    <a routerLink="/shop/kitchen"><i class="fa fa-fw fa-home"></i>Kitchen</a>
+    <a routerLink="/shop/general"><i class="fa fa-fw fa-home"></i>general shopping</a>
+    <a *ngIf="isUserLoggedIn" routerLink="/user"> <i class="fa fa-fw fa-user"></i> user</a>
+    <a *ngIf="isUserLoggedIn" routerLink="user/cart"> <i class="fa fa-fw fa-user"></i> Cart {{count | async}}</a>
+    <!-- <li *ngIf="isUserLoggedIn" routerLink="/user/wishlist">Wishlist</li>
+    <li *ngIf="isUserLoggedIn" routerLink="/user/bag">Bag</li>
+    <li *ngIf="isUserLoggedIn" routerLink="/user/my-profile">Profile</li> -->
+</div>

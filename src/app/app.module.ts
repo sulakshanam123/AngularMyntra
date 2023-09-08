@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,12 @@ import { GeneralComponent } from './general/general.component';
 import { UserModule } from './user/user.module';
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
+import { HeaderComponent } from './header/header.component';
+import { HighlightDirective } from './highlight.directive';
+import { IfNotDirective } from './if-not.directive';
+import { FinalPricePipe } from './final-price.pipe';
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from './Store/cart.reducers';
 
 @NgModule({
   declarations: [
@@ -21,14 +30,21 @@ import { LoginModule } from './login/login.module';
     WomenComponent,
     KitchenComponent,
     KidsComponent,
-    GeneralComponent
+    GeneralComponent,
+    HeaderComponent,
+    HighlightDirective,
+    IfNotDirective,
+    FinalPricePipe
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     UserModule,
     FormsModule,
-    LoginModule
+    LoginModule,
+    StoreModule.forRoot({cartCount: cartReducer}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]

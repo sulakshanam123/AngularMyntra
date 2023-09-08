@@ -1,0 +1,21 @@
+@import '../common-styles/myMixins';
+
+.example-form {
+    .mat-form-field {
+        line-height: 3;
+        .mat-form-field-infix {
+            border-top: none;
+        }
+    }
+    width: 100%;
+    min-width: 150px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    #username {
+        @include inputBox;
+    }
+  }

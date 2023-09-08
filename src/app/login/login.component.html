@@ -1,11 +1,14 @@
 <h1>Welcome to Our Shopping Experience!!!</h1>
-<form #loginForm="ngForm">
-    <div>
-        <label>Username</label>
-        <input type="text" class="form-control" id="username" required [(ngModel)]="username" name="username">
-    </div>
-    <div>
-        <label>Password</label>
-        <input type="text" class="form-control" id="password" required [(ngModel)]="password" name="password">
-    </div>
+<form #loginForm="ngForm" class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input type="text" id="username" matInput required [(ngModel)]="username" name="username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" id="password" matInput required [(ngModel)]="password" name="password">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <button mat-raised-button color="primary" (click)="login()" class="example-full-width">Login</button>
+</mat-form-field>
 </form>

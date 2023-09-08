@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './app/common-styles/colors';
+@import './app/common-styles/myMixins';
+// scss variables
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+h1 {
+    color: $myPink;
+}
+
+// nesting
+div {
+    // div styles
+    ul {
+        // ul styles
+        li {
+            // li styles
+        }
+    }
+}
