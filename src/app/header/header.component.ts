@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AppState } from '../Store/app.state';
+import { selectCart, selectCartCount } from '../Store/store.selector';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +10,20 @@ import { Store } from '@ngrx/store';
 })
 export class HeaderComponent implements OnInit {
 
-  count = this._store.select('cartCount');
+  count: any;
 
   @Input() isUserLoggedIn : boolean = false;
+  cart: any = [];
 
-  constructor(private _store: Store<{cartCount: number}>) { }
+  constructor(private _store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this._store.select(selectCart).subscribe(res => {
+      if (res) {
+        this.cart = res.cart;
+      }
+    });
+    this.count = this._store.select(selectCartCount);
   }
 
 }

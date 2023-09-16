@@ -2,3 +2,8 @@
 
 <button (click)="addItemToCart()">Add item to Cart</button>
 <button (click)="removeItemFromCart()">Remove Item from Cart</button>
+
+
+<div *ngFor="let cloth of data.ethnics">
+    <div>{{cloth.category}}</div>
+</div>

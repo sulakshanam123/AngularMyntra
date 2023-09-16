@@ -16,8 +16,8 @@ import { UserModule } from './user/user.module';
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 import { HeaderComponent } from './header/header.component';
-import { HighlightDirective } from './highlight.directive';
-import { IfNotDirective } from './if-not.directive';
+import { HighlightDirective } from './common/directives/highlight.directive';
+import { IfNotDirective } from './common/directives/if-not.directive';
 import { FinalPricePipe } from './final-price.pipe';
 import { StoreModule } from '@ngrx/store';
 import { cartReducer } from './Store/cart.reducers';
@@ -44,7 +44,7 @@ import { cartReducer } from './Store/cart.reducers';
     UserModule,
     FormsModule,
     LoginModule,
-    StoreModule.forRoot({cartCount: cartReducer}, {})
+    StoreModule.forRoot({cart: cartReducer}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
